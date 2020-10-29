@@ -9,12 +9,13 @@ const peerServer = ExpressPeerServer(server, {
   debug: true,
 });
 app.use("/peerjs", peerServer);
-if (process.env.NODE_ENV === "production")
-app.use(express.static(path.join(__dirname, '../client/build')));
-// app.use(cors())
-app.get("/",function(req, res) {
-	res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  // app.use(cors())
+  app.get("*", function (req, res) {
+    res.sendFile(path.resolve(__dirname, "../client","build","index.html"));
+  });
+}
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId) => {
     socket.join(roomId);
