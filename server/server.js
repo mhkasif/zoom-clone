@@ -9,8 +9,10 @@ const peerServer = ExpressPeerServer(server, {
   debug: true,
 });
 app.use("/peerjs", peerServer);
+if (process.env.NODE_ENV === "production")
+app.use(express.static(path.join(__dirname, '../client/build')));
 // app.use(cors())
-app.use(function(req, res) {
+app.get("/",function(req, res) {
 	res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 io.on("connection", (socket) => {
@@ -24,8 +26,7 @@ io.on("connection", (socket) => {
     });
   });
 });
-if (process.env.NODE_ENV === "production")
-app.use(express.static(path.join(__dirname, '../client/build')));
+
 //   app.use(express.static("../client/build"));
 
 const port = process.env.PORT || 5000;
