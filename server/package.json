@@ -2,7 +2,6 @@
   "name": "zoom-clone-server",
   "version": "1.0.0",
   "description": "server for zoom-clone",
-  "main": "server.js",
   "scripts": {
     "heroku-postbuild": "cd client && yarn && yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
