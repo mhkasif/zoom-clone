@@ -1,0 +1,68 @@
+.chat{
+    grid-area: chat;
+    background-color: #242324;
+    border-left: 1px solid #3d3d42;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    // background-color: #34312a;
+    &__heading{
+color: #d2d2d2;
+letter-spacing: 3px;
+    }
+    &__body{
+flex-grow: 1;
+// display: flex;
+// justify-content:flex-start;
+width: 100%;
+
+    }
+
+    &__footer-input{
+        height:11vh;
+        width: 100%;
+        border-top: 1px solid #3d3d42;
+        form{
+            height: 100%;
+            width: 100%;
+        }
+        input{
+            border: none;
+            width: 95%;
+            height: 100%;
+            padding-left: 5%;
+            font-size: 16px;
+            background-color: transparent;
+            color: #d2d2d2;
+            outline: none;
+        }
+        button{
+            display: none;
+            visibility: hidden;
+            width: 0px;
+            height: 0px;
+        }
+    }
+}
+
+.msg-box{
+    min-width: 120px;
+    padding: 15px 10px;
+    background-color: rgba(blue,0.1);
+    color: #d2d2d2;
+    border-radius: 20px;
+    position: relative;
+width: fit-content;
+margin-bottom: 10px;
+
+    span{
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        font-size: x-small;
+    }
+}

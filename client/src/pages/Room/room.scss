@@ -1,11 +1,12 @@
-.video-container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+.room-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+    "videoscreen chat"
+    "menu chat";
+grid-template-rows: 90vh 10vh;
+grid-template-columns: 75vw 25vw;
+  }
 
-      .video{
-        width:40vw;
-        height: 60vh;
-      }
-    }
