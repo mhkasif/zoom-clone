@@ -4,6 +4,7 @@ const { v4: uuidv4 } = require("uuid");
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 const { ExpressPeerServer } = require("peer");
+const path=require("path")
 // const cors=require("cors")
 const peerServer = ExpressPeerServer(server, {
   debug: true,
