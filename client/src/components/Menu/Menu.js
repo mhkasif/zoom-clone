@@ -15,18 +15,29 @@ import {
 export default function Menu({ stream }) {
   const [muted, setMute] = useState(false);
   const [video, setVideo] = useState(false);
-console.log(stream);
+  console.log(stream);
   const setMuteUnmute = () => {
     console.log(stream?.getAudioTracks());
     const enabled = stream?.getAudioTracks()[0]?.enabled;
     if (enabled) {
-      stream.getAudioTracks()[0].enabled=false
+      stream.getAudioTracks()[0].enabled = false;
       setMute(true);
     } else {
-      stream.getAudioTracks()[0].enabled=true
+      stream.getAudioTracks()[0].enabled = true;
       setMute(false);
     }
   };
+  const setPlayStop=()=>{
+    console.log(stream?.getVideoTracks());
+    const enabled = stream?.getVideoTracks()[0]?.enabled;
+    if (enabled) {
+      stream.getVideoTracks()[0].enabled = false;
+      setVideo(true);
+    } else {
+      stream.getVideoTracks()[0].enabled = true;
+      setVideo(false);
+    }
+  }
   return (
     <div className="menu-container">
       <div className="controller controller-left">
@@ -34,9 +45,9 @@ console.log(stream);
           <FontAwesomeIcon icon={muted ? faMicrophoneSlash : faMicrophone} />
           <p>{muted ? "Unmute" : "Mute"}</p>
         </div>
-        <div className="icon-container video">
-          <FontAwesomeIcon icon={video ? faVideoSlash : faVideo} />
-          <p>{video ? "Stop video" : "Start video"}</p>
+        <div onClick={setPlayStop} className="icon-container video">
+          <FontAwesomeIcon icon={video ?   faVideo:faVideoSlash} />
+          <p>{video ? "Start video" : "Stop video"}</p>
         </div>
       </div>
       <div className="controller controller-middle">

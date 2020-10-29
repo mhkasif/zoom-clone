@@ -1,0 +1,20 @@
+{
+  "name": "zoom-clone",
+  "version": "1.0.0",
+  "description": "zoom clone by mhk",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhkasif/zoom-clone.git"
+  },
+  "author": "mhk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhkasif/zoom-clone/issues"
+  },
+  "homepage": "https://github.com/mhkasif/zoom-clone#readme"
+}

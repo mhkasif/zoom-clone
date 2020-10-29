@@ -7,7 +7,7 @@ import Peer from "peerjs";
 import VideoScreen from "../../components/VideoScreen/VideoScreen";
 import Chat from "../../components/Chat/Chat";
 import Menu from "../../components/Menu/Menu";
-export const socket = socketIoClient("http://localhost:8080");
+export const socket = socketIoClient("http://localhost:5000");
 
 
 
@@ -23,7 +23,8 @@ console.log(streamState);
     const peer = new Peer(undefined, {
       path: "/peerjs",
       host: "/",
-      port: "8080",
+      // port: "8080",
+      port: "443",
     });
     const connectToNewUser = (userId,stream) => {
         const call=peer.call(userId,stream)
