@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCoffee,
   faCommentAlt,
+  faCopy,
   faMicrophone,
   faMicrophoneSlash,
   faShieldAlt,
@@ -27,7 +28,7 @@ export default function Menu({ stream }) {
       setMute(false);
     }
   };
-  const setPlayStop=()=>{
+  const setPlayStop = () => {
     console.log(stream?.getVideoTracks());
     const enabled = stream?.getVideoTracks()[0]?.enabled;
     if (enabled) {
@@ -37,7 +38,7 @@ export default function Menu({ stream }) {
       stream.getVideoTracks()[0].enabled = true;
       setVideo(false);
     }
-  }
+  };
   return (
     <div className="menu-container">
       <div className="controller controller-left">
@@ -46,7 +47,7 @@ export default function Menu({ stream }) {
           <p>{muted ? "Unmute" : "Mute"}</p>
         </div>
         <div onClick={setPlayStop} className="icon-container video">
-          <FontAwesomeIcon icon={video ?   faVideo:faVideoSlash} />
+          <FontAwesomeIcon icon={video ? faVideo : faVideoSlash} />
           <p>{video ? "Start video" : "Stop video"}</p>
         </div>
       </div>
@@ -56,8 +57,8 @@ export default function Menu({ stream }) {
           <p>Security</p>
         </div>
         <div className="icon-container participants">
-          <FontAwesomeIcon icon={faUserFriends} />
-          <p>Participants</p>
+          <FontAwesomeIcon icon={faCopy} />
+          <p>Copy Link</p>
         </div>
         <div className="icon-container video">
           <FontAwesomeIcon icon={faCommentAlt} />

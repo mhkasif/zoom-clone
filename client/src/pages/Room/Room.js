@@ -7,13 +7,12 @@ import Peer from "peerjs";
 import VideoScreen from "../../components/VideoScreen/VideoScreen";
 import Chat from "../../components/Chat/Chat";
 import Menu from "../../components/Menu/Menu";
-export const socket = socketIoClient("http://localhost:5000");
+export const socket = socketIoClient("/");
 
 
 
 const Room = () => {
   const videoRef = useRef(null);
-  const userVideoRef = useRef(null);
   const { roomId } = useParams();
   const [messages,setMessages]=useState([])
   const [streamState,setStream]=useState(null)
