@@ -10,8 +10,8 @@ const peerServer = ExpressPeerServer(server, {
 });
 app.use("/peerjs", peerServer);
 // app.use(cors())
-app.get("/", (req, res) => {
-  res.send("ello");
+app.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId) => {
