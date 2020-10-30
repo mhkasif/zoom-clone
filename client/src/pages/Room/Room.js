@@ -9,8 +9,8 @@ import Chat from "../../components/Chat/Chat";
 import Menu from "../../components/Menu/Menu";
 import { useStateValue } from "../../Hooks/StateProvider";
 import { actionTypes } from "../../Hooks/reducer";
-// export const socket = socketIoClient("/");
-export const socket = socketIoClient("http://localhost:5000");
+export const socket = socketIoClient("/");
+// export const socket = socketIoClient("http://localhost:5000");
 
 const Room = () => {
   const videoRef = useRef(null);
@@ -30,8 +30,8 @@ const Room = () => {
     const peer = new Peer(undefined, {
       path: "/peerjs",
       host: "/",
-      port: "5000",
-      // port: "443",
+      // port: "5000",
+      port: "443",
     });
 
     const connectToNewUser = (userId, stream) => {
