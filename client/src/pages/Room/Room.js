@@ -95,7 +95,7 @@ const Room = () => {
     return () => {
       socket.disconnect();
     };
-  }, [videoRef,user]);
+  }, [videoRef]);
 
   return (
     <>
