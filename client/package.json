@@ -23,7 +23,7 @@
     "uuid": "^8.3.1",
     "web-vitals": "^0.2.4"
   },
-  "proxy": "http://localhost:5000",
+
 
   "scripts": {
     "start": "react-scripts start",

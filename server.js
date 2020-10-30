@@ -5,16 +5,19 @@ const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 const { ExpressPeerServer } = require("peer");
 const path=require("path")
-// const cors=require("cors")
+const cors=require("cors")
 const peerServer = ExpressPeerServer(server, {
   debug: true,
 });
+// app.use(cors())
 app.use("/peerjs", peerServer);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-  // app.use(cors())
+  app.use(cors())
   app.get("*", function (req, res) {
-    res.sendFile(path.resolve(__dirname, "../client","build","index.html"));
+    res.sendFile(path.resolve(__dirname, "../client","build","index.html"),(err)=>{
+      console.log(err);
+    });
   });
 }
 io.on("connection", (socket) => {

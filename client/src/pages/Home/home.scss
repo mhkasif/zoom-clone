@@ -4,21 +4,63 @@
     height: 100vh;
     display: grid;
     place-items: center;
-    &-btn{
-        width: 250px;
-        height: 100px;
-        background-color: #3cab49;
-        display: flex;
-        justify-content: center;
+    background-color: #ededed;
+    &-card{
+        width: 40vw;
+        height: 60vh;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0px 2px 15px rgba(#000,0.3);
         align-items: center;
-        border-radius: 15px;
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        h3{
+            font-size: 28px;
+            color: #c4c1c1;
+            letter-spacing: 3px;
+        }
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+            justify-content: space-between;
+        }
+        input{
+            // justify-self: flex-start;
+            align-self: center;
+            width: 80%;
+            height: 80px;
+            border: none;
+            border-bottom: 1px solid #c4c1c1;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            outline: none;
+            &:focus{
+                border-bottom: 1px solid  rgb(80, 201, 56);
+            }
 
-        p{
+        }
+        button{
+            width: 30%;
+            height: 40px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            background-color: rgb(80, 201, 56);
+            border: none;
+            align-self: center;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+            &:active{
+                transform: translateY(2px);
 
-            color: white;
-            font-weight: 400;
-            font-size: 22px;
-            letter-spacing: 2px;
+            }
         }
 
     }
@@ -27,4 +69,8 @@
 a{
     text-decoration: none;
     color: white;
+}
+.disabled{
+    background: #ededed !important;
+    pointer-events: none;
 }
